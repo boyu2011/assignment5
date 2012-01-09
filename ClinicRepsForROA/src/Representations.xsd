@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.example.org/Clinic/Treatment"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.example.org/Clinic/Treatment" xmlns:dap="http://www.example.org/schemas/clinic/rest/dap"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0">
+
+	<import namespace="http://www.example.org/schemas/clinic/rest/dap"
+		schemaLocation="Link2.xsd" />
+
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings>
+				<jaxb:javaType name="java.util.Date" xmlType="date"
+					parseMethod="edu.stevens.cs.cs548.clinic.dto.DateAdapter.parseDate"
+					printMethod="edu.stevens.cs.cs548.clinic.dto.DateAdapter.printDate" />
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+
+	<element name="treatment" type="tns:treatmentType" />
+
+	<complexType name="treatmentType">
+		<annotation>
+			<appinfo>
+				<jaxb:class implClass="TreatmentRepresentation" />
+			</appinfo>
+		</annotation>
+		<sequence>
+			<element name="tid" type="int"></element>
+			<element name="patient" type="dap:linkType"></element>
+			<element name="provider" type="dap:linkType"></element>
+			<choice>
+				<element name="drug" type="tns:DrugTreatmentType"></element>
+				<element name="surgery" type="tns:SurgeryType"></element>
+				<element name="radiology" type="tns:RadiologyType">
+				</element>
+			</choice>
+		</sequence>
+	</complexType>
+
+	<complexType name="DrugTreatmentType">
+		<sequence>
+			<element name="drugName" type="string"></element>
+			<element name="dosage" type="int"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="SurgeryType">
+		<sequence>
+			<element name="date" type="date"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="RadiologyType">
+		<sequence>
+			<element name="dates" type="tns:RadDatesType"></element>
+		</sequence>
+	</complexType>
+
+	<simpleType name="RadDatesType">
+		<list itemType="date"></list>
+	</simpleType>
+
+
+	<element name="patient" type="tns:patientType"></element>
+
+	<complexType name="patientType">
+		<annotation>
+			<appinfo>
+				<jaxb:class implClass="PatientRepresentation" />
+			</appinfo>
+		</annotation>
+		<sequence>
+			<element name="name" type="string"></element>
+			<element name="dob" type="date"></element>
+			<element name="age" type="int"></element>
+			<element name="treatments">
+				<complexType>
+					<sequence>
+						<element name="link" type="dap:linkType" maxOccurs="unbounded"
+							minOccurs="0">
+						</element>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+</schema>

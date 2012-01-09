@@ -1,0 +1,5 @@
+#surefire
+#Wed Oct 26 13:10:16 EDT 2011
+user.dir=/Users/boyu2011/stevens/cs549/assignment3/hello-application
+localRepository=/Users/boyu2011/.m2/repository
+basedir=/Users/boyu2011/stevens/cs549/assignment3/hello-application

@@ -1,0 +1,1 @@
+insert into CLINIC(CLINIC.ID, CLINIC.NAME) values(1, 'Hoboken')

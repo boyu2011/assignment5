@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>edu.stevens.cs.cs549.rest</groupId>
+	<artifactId>ClinicRESTServer</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>ClinicRESTServer</name>
+	<url>http://maven.apache.org</url>
+
+	<licenses>
+		<license></license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>boyu2011</id>
+			<name>Bo Yu</name>
+			<email>byu1@stevens.edu</email>
+			<organization>Stevens Institute of Technology</organization>
+			<organizationUrl>http://www.stevens.edu</organizationUrl>
+		</developer>
+	</developers>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>edu.stevens.cs.cs549.rest.hello.Main</mainClass>
+					<!--  
+					<arguments>
+						<argument></argument>
+					</arguments>
+					-->
+					<systemProperties>
+						<systemProperty>
+							<key>jersey.test.port</key>
+							<value>${server.port.http}</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>edu.stevens.cs.cs549.rest.hello.Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<id>hello-dist</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- HTTP server listens on this port. -->
+		<server.port.http>9090</server.port.http>
+
+		<!-- -->
+		<server.home>${user.home}</server.home>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<!-- <version>1.10-b02</version> -->
+			<version>1.9.1</version>
+			<!-- <type>bundle</type> -->
+		</dependency>
+		<dependency>
+			<groupId>com.sun.grizzly</groupId>
+			<artifactId>grizzly-servlet-webserver</artifactId>
+			<version>2.0.0-M3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-grizzly2</artifactId>
+			<version>1.9.1</version>
+			<!-- <version>1.10-b02</version> -->
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+
+	</dependencies>
+	<repositories>
+		<!--These are needed for Jersey -->
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>maven-repository.dev.java.net</id>
+			<name>Java.net Maven 1 Repository (legacy)</name>
+			<url>http://download.java.net/maven/1</url>
+			<layout>legacy</layout>
+		</repository>
+	</repositories>
+</project>

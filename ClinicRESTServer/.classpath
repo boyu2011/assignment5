@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/boyu2011/dev_tools/glassfish3/glassfish/modules/javax.ejb.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/boyu2011/dev_tools/eclipse-j2ee-indigo/plugins/oracle.eclipse.tools.doc.javaee6_1.0.0.201106201341/javaee6doc/doc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="/ClinicBLForROA"/>
+	<classpathentry kind="src" path="/ClinicDomainModel"/>
+	<classpathentry kind="src" path="/ClinicRepsForROA"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/boyu2011/dev_tools/glassfish3/glassfish/modules/jersey-client.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/boyu2011/dev_tools/eclipse-j2ee-indigo/plugins/oracle.eclipse.tools.doc.javaee6_1.0.0.201106201341/javaee6doc/doc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/boyu2011/dev_tools/glassfish3/glassfish/modules/jersey-core.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/boyu2011/dev_tools/eclipse-j2ee-indigo/plugins/oracle.eclipse.tools.doc.javaee6_1.0.0.201106201341/javaee6doc/doc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,12 @@
+Import this project into Eclipse as a Maven project.
+
+Run as an application, with main class edu.stevens.cs.cs549.rest.hello.Main.
+
+To run from the command line, navigate to the root folder of the Maven project,
+and type "mvn exec:java".
+
+To test the running program, from another window type:
+
+curl http://localhost/?name=Joe
+
+or type this into the url window of your browser.

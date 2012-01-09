@@ -1,0 +1,18 @@
+
+In this app, I defined a REST interface for a Health Info System. I defined resources that provide access to my domain model in terms of representations transferred to and from clients. I defined a Web service interface for clients that want to access my application over the Web, that includes a hypermedia network linking resources to other resources.
+
+Representations.
+
+Defined the representations for my SOA. The source code in the folder ClinicRepsForROA.
+
+Resources.
+
+I defined RESTful Web service API for the desired operations on a clinic service. The source code in the ClinicRESTServer/src/main/java/edu/stevens/cs/cs548/clinic/roa/resources/ClinicResource.java.
+
+Business objects.
+
+I defined business logic as an EJB. The application server will take care of instantiating an EJB from a pool of available instances for each client request that is made.
+
+Domain.
+
+I encapsulated my data model in the ClinicDomainModel.

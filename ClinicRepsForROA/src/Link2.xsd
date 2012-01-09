@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/schemas/clinic/rest/dap">
+
+  <xs:complexType name="linkType">
+    <xs:sequence/>
+    <xs:attribute name="url" type="xs:string"/>
+    <xs:attribute name="relation" type="xs:string"/>
+    <xs:attribute name="mediaType" type="xs:string"/>
+  </xs:complexType>
+</xs:schema>
+
